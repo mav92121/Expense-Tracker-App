@@ -1,10 +1,13 @@
 import React from "react";
 import "./Summary.css";
+import RecentTransactions from "./RecentTransactions/RecentTransactions";
+import TopExpense from "./TopExpense/TopExpense";
 
 const Summarry = () => {
   return (
-    <div>
-      <h2 className="heading">Recent Transactions</h2>
+    <div className="summary-container">
+      <RecentTransactions />
+      <TopExpense />
     </div>
   );
 };
