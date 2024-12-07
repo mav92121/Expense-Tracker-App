@@ -3,4 +3,38 @@
   height: 40vh;
   background-color: white;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 20px;
+  /* align-items: flex-start; */
+  /* padding-bottom: 5px; */
+  border-bottom: 1px solid #9b9b9b;
+}
+.transactions-right-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.transactions-left-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.icons {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  display: "inline-block";
+}
+.date-color {
+  color: #9b9b9b;
+}
+.bold {
+  font-weight: 700;
 }
