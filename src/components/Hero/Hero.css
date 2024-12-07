@@ -1,0 +1,14 @@
+.hero {
+  height: 270px;
+  width: 100%;
+  background-color: var(--grey);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+.hero-tile-container {
+  display: flex;
+  gap: 32px;
+}
