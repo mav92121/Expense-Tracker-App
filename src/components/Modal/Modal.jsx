@@ -1,6 +1,7 @@
 import React from "react";
 import "./Modal.css";
 import ReactModal from "react-modal";
+import { ENTERTAINMENT, FOOD, TRAVEL } from "../../constants";
 
 const Modal = ({ isModalVisible, setIsModalVisible, isExpense = false }) => {
   return (
@@ -35,7 +36,11 @@ const Modal = ({ isModalVisible, setIsModalVisible, isExpense = false }) => {
           )}
           {isExpense && (
             <div>
-              <input className="input" type="text" placeholder="Category" />
+              <select className="select" name="Category" id="">
+                <option value={FOOD}>{FOOD}</option>
+                <option value={ENTERTAINMENT}>{ENTERTAINMENT}</option>
+                <option value={TRAVEL}>{TRAVEL}</option>
+              </select>
             </div>
           )}
           {isExpense && (
