@@ -1,6 +1,6 @@
 .transactions-container {
   width: 67vw;
-  height: 40vh;
+  min-height: 40vh;
   background-color: white;
   border-radius: 15px;
   display: flex;

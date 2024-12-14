@@ -10,7 +10,7 @@ const HeroTile = ({ isExpense }) => {
   return (
     <div className="hero-tile">
       <div className="hero-tile-title">
-        {`${title}: `}{" "}
+        {`${title}: `}
         <span className={`${isExpense ? "orange-text" : "green-text"}`}>
           ₹{money}
         </span>

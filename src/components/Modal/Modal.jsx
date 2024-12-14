@@ -11,7 +11,7 @@ const Modal = ({ isModalVisible, setIsModalVisible, isExpense = false }) => {
         isOpen={isModalVisible}
       >
         <h1 className="modal-heading">
-          {isExpense ? "Edit Expenses" : "Add Balance"}
+          {isExpense ? "Add Expenses" : "Add Balance"}
         </h1>
         <div className="input-container-modal">
           {!isExpense && (

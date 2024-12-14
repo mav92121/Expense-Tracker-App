@@ -54,18 +54,19 @@ const HeroChart = () => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend
-          layout="horizontal"
+        {/* <Legend
+          layout="vertical"
           verticalAlign="bottom"
           align="center"
           iconType="rect"
           wrapperStyle={{
-            bottom: 78, // Remove default top margin
-            // left: 0, // Remove default left margin
-            // right: 0, // Remove default right margin
-            // marginTop: 0, // Adjust this to decrease the gap
+            backgroundColor: "red",
+            marginTop: -120,
+            width: "100%",
+            overflow: "hidden",
+            textAlign: "center",
           }}
-        />
+        /> */}
       </PieChart>
     </div>
   );

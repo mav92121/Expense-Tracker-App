@@ -30,3 +30,9 @@
 .green-text {
   color: #9dff5b;
 }
+
+@media only screen and (max-width: 885px) {
+  .hero-tile {
+    width: 70vw;
+  }
+}
