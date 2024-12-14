@@ -13,13 +13,31 @@ const RecentTransactions = ({
   console.log("clist ", expenseList);
   const [editId, setEditId] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
   console.log("selected Id ", editId);
+  const itemsPerPage = 3;
+  // const indexOfLastItem = currentPage * itemsPerPage;
+  // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentExpenses = expenseList.filter(
+    (_, i) => i >= startIndex && i < startIndex + itemsPerPage
+  );
+  const handleNext = () => {
+    const totalDAta = expenseList.length;
+    if (startIndex + itemsPerPage < totalDAta) {
+      setStartIndex(startIndex + itemsPerPage);
+    }
+  };
+  const handlePrev = () => {
+    if (startIndex > 0) {
+      setStartIndex(startIndex - itemsPerPage);
+    }
+  };
   return (
     <div>
       <h3 className="heading">Recent Transactions</h3>
       {expenseList?.length > 0 && (
         <div className="transactions-container">
-          {expenseList.map((item, index) => (
+          {currentExpenses.map((item, index) => (
             <div key={index} className="transaction">
               <div className="transactions-left-section">
                 <div>
@@ -54,6 +72,15 @@ const RecentTransactions = ({
               </div>
             </div>
           ))}
+          <div className="pagination">
+            <button className="arrows" onClick={handlePrev}>
+              <img src="/arrow-left.png" alt="left" />
+            </button>
+            <span className="pageIndex">{startIndex / itemsPerPage + 1}</span>
+            <button className="arrows" onClick={handleNext}>
+              <img src="/arrow-right.png" alt="right" />
+            </button>
+          </div>
         </div>
       )}
       {isModalVisible && (
