@@ -1,6 +1,6 @@
 .hero {
   min-height: 270px;
-  width: 100%;
+  width: 99%;
   background-color: var(--grey);
   border-radius: 10px;
   display: flex;

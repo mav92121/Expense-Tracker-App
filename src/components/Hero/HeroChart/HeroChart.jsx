@@ -1,12 +1,29 @@
 import React from "react";
 import "./HeroChart.css";
 import { PieChart, Pie, Cell, Legend } from "recharts";
+import { ENTERTAINMENT, FOOD, TRAVEL } from "../../../constants";
 
-const HeroChart = () => {
+const HeroChart = ({
+  currentBalance,
+  setCurrentBalance,
+  expenseList,
+  setExpenseList,
+}) => {
+  const food = expenseList.filter((expense) => expense.category === FOOD);
+  const foodAmount = food.reduce((acc, expense) => acc + expense.amount, 0);
+  const entertainment = expenseList.filter(
+    (expense) => expense.category === ENTERTAINMENT
+  );
+  const entertainmentAmount = entertainment.reduce(
+    (acc, expense) => acc + expense.amount,
+    0
+  );
+  const travel = expenseList.filter((expense) => expense.category === TRAVEL);
+  const travelAmount = travel.reduce((acc, expense) => acc + expense.amount, 0);
   const data = [
-    { name: "Food", value: 400 },
-    { name: "Entertainment", value: 300 },
-    { name: "Travel", value: 300 },
+    { name: "Food", value: foodAmount },
+    { name: "Entertainment", value: entertainmentAmount },
+    { name: "Travel", value: travelAmount },
   ];
 
   const COLORS = ["#A000FF", "#FF9304", "#FDE006"];
